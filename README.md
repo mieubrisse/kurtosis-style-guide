@@ -5,9 +5,9 @@
 This style guide captures what Kurtosis views as good code. It was created descriptively, from years of writing Kurtosis code; every section resulted from encounters "in the wild"; none of it is aspirational "we should do this but nobody really does".
 
 Other language-specific style guides:
-- [Golang](./go-style-guide.md)
-- [Typescript](./typescript-style-guide.md)
-- [Bash](./bash-style-guide.md)
+- [Golang](./guides/go-style-guide.md)
+- [Typescript](./guides/typescript-style-guide.md)
+- [Bash](./guides/bash-style-guide.md)
 
 Principles
 ----------
@@ -35,20 +35,6 @@ Rationale:
 * Keeping dead code up-to-date on the off chance that we might need it someday is just-in-case engineering
 * If someone did actually end up using the code again, the dead code has likely not been maintained and will be buggy
 * Maintaining dead code takes up time that could be used for maintaining live code
-
-### Force people into good choices; don't rely on memory
-* There will often be two ways of doing things: relying on human memory, or using the computer to force people into doing the right thing
-* **Always prefer using the computer because:**
-    * Human memory is weak and prone to failure
-    * The humans don't need to stress about remembering so coding is more fun
-* E.g. we wanted people to update repo changelogs whenever they commit the PR
-    * Option 1: constantly remind people on the team, PR reviewer needs to remember to look for a changelog entry
-    * Option 2: add a CI check that fails if the changelog isn't updated
-    * Option 2 is better because it a) never fails and b) relieves humans of the stress of remembering
-* E.g. we wanted to add a check on the CLI that verifies the user is running the latest version of the CLI on every command
-    * Option 1: add a `CheckCLIVersion` helper function; Kurtosis engineers need to remember to call it at the start of all the different CLI commands
-    * Option 2: add the version check to the `RootCmd` which runs before _every_ command
-    * Option 2 is better because there's no possibility of forgetting when we add a new command
 
 ### Make things as private as possible
 This is important to:
@@ -138,7 +124,7 @@ In the first version (which is the common way most people think - "success first
 This is known as reducing the [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) - i.e. the number of distinct paths that the program can go down - and it results in easier-to-understand code! It is also basically the same as [the "indent error flow" section of Google's Go style guide](https://github.com/golang/go/wiki/CodeReviewComments#indent-error-flow).
 
 ### Pick up your toys
-See the [dedicated page about the rules of resource ownership][picking-up-your-toys]
+See the [dedicated page about the rules of resource ownership](./guides/picking-up-your-toys.md)
 
 ### Avoid too much nested complexity (aka "TMNC") by using local variables
 Nested complexity is when a single line is doing many things. E.g.:

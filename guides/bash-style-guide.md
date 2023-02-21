@@ -5,7 +5,7 @@ This isn't to say that you shouldn't write programs in shell - it's the most por
 
 **WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING**
 
-### All shell scripts must start from [the Bash template](https://github.com/kurtosis-tech/checklists-and-templates/blob/master/generic-bash-script.sh), which enforces strict mode
+### All shell scripts must start from [the Bash template](https://github.com/kurtosis-tech/checklists-and-templates/blob/main/generic-bash-script.sh), which enforces strict mode
 * Rationale: 
     * Bash strict mode is **essential** to writing safe Bash code
         * `set -e` means "exit the script with an error if any command fails" (rather than continuing on as if nothing happened, which is the shell defeault)

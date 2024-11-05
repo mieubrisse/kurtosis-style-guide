@@ -11,7 +11,7 @@ Other language-specific style guides:
 
 Principles
 ----------
-The core principle of Kurtosis code is "flexible minimalism", and [you should read this to understand what that means and why](./flexible-minimalism.md).
+The core principle of Kurtosis code is "flexible minimalism", and [you should read this to understand what that means and why](./guides/flexible-minimalism.md).
 
 Several ideas fall out of this:
 

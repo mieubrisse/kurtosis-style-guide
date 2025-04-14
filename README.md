@@ -702,7 +702,23 @@ else
 }
 ```
 
+### Favor positive boolean names over negative
+I.e., use `shouldEnableFeature` rather than `shouldDisableFeature`.
 
+Rationale: this makes the variable easier to reason about, which reduces the chance of accidentally using the inverted value of the variable.
+
+Example: [this PR](https://github.com/kurtosis-tech/kurtosis/pull/2707) had a variable named `shouldTurnOffPersistentVolumeLogsCollection`. Due to the negative, using the variable in a meaningful sense meant the following code:
+```go
+if !shouldTurnOffPersistentVolumeLogsCollection {
+   ...
+}
+```
+This reads as "if not shouldTurnOffPersistentVoluemLogsCollection". This double negative is harder to reason about than:
+```go
+if shouldEnablePersistentVolumeLogsCollection {
+   ...
+}
+```
 
 <!--------------------------------- ONLY LINKS BELOW HERE ------------------------------------------>
 [picking-up-your-toys]: ./picking-up-your-toys.md
